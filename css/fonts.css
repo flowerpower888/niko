@@ -1,0 +1,17 @@
+@font-face {
+    font-family: YSText;
+    src: url(../fonts/YSText-Regular.woff) format("woff");
+    font-weight: 400;
+}
+
+@font-face {
+    font-family: YSText;
+    src: url(../fonts/YSText-Medium.woff) format("woff");
+    font-weight: 500;
+}
+
+@font-face {
+    font-family: YSText;
+    src: url(../fonts/YSText-Bold.woff) format("woff");
+    font-weight: 700;
+}
