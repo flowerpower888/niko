@@ -1,4 +1,5 @@
 let contactForm = document.querySelector(".contact-form__form")
+let contactFormButton = document.querySelector(".contact-form__icon")
 
 window.addEventListener('load', () => {
     if ('scrollRestoration' in history) {
@@ -9,20 +10,24 @@ window.addEventListener('load', () => {
     setTimeout(() => {
         document.querySelector(".preloader").classList.add('hidden');
     }, 1000);
+
     setTimeout(() => {
-        // openContactForm()
-        document.querySelector(".contact-form__icon").click()
-    }, 8000);
-    setTimeout(() => {
-        if (document.querySelector(".contact-form__icon").classList.contains("active")) {
-            document.querySelector(".contact-form__icon").click()
+        if (!contactFormButton.classList.contains("active")) {
+            contactFormButton.click()
         }
-    }, 16000);
+    }, 8000);
+})
+
+$('#modal').on('show.bs.modal', function(e) {
+    contactFormButton.classList.add("active");
+})
+$('#modal').on('hide.bs.modal', function(e) {
+    contactFormButton.classList.remove("active");
 })
 
 // openContactForm = () => {
 //     play()
-//     document.querySelector(".contact-form__icon").classList.toggle("active");
+//     contactFormButton.classList.toggle("active");
 //     contactForm.classList.remove("hidden");
 
 //     contactForm.classList.toggle("animate__slideInUp");
@@ -33,14 +38,6 @@ play = () => {
     let audio = document.getElementById("audio");
     audio.play();
 }
-
-document.querySelector(".contact-form").addEventListener('click', () => {
-    play()
-
-    document.querySelector(".contact-form__icon").classList.toggle("active");
-})
-
-
 
 // Smooth scrolling
 $('body').scrollspy({ target: ".navbar", offset: 50 });

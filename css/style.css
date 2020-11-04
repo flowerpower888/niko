@@ -1,12 +1,29 @@
+.btn-outline-primary {
+  color: #ad1457;
+  border-color: #ad1457;
+}
+.btn-outline-primary:hover {
+  color: #fff;
+  background-color: #ad1457;
+  border-color: #ad1457;
+}
+
 body {
   font-family: YSText;
   position: relative;
   background: #f9f9f9;
 }
+body button {
+  border: none;
+}
+body button:focus {
+  outline: none;
+}
 body img {
   width: 100%;
 }
 body li {
+  list-style: none;
   position: relative;
   padding: 15px 0;
 }
@@ -99,6 +116,46 @@ header h1 {
   left: 2em;
 }
 
+#catalog .catalog__item img {
+  transition: transform 0.5s;
+}
+#catalog .catalog__item img:hover {
+  cursor: pointer;
+  transform: scale(1.1);
+}
+#catalog .catalog__item p {
+  font-size: 14px;
+}
+#catalog .catalog__item .price {
+  font-size: 18px;
+}
+#catalog .catalog__item .col:nth-child(1) {
+  min-height: 338px;
+  margin-bottom: 1.5em;
+}
+#catalog .color span {
+  width: 20px;
+  height: 20px;
+  border: solid 2px #aaa;
+  border-radius: 4px;
+  float: left;
+  margin-right: 0.4rem;
+  cursor: pointer;
+  transition: all 0.4s ease;
+}
+#catalog .color span:nth-child(1) {
+  background: #82431e;
+}
+#catalog .color span:nth-child(1):hover {
+  border-color: #82431e;
+}
+#catalog .color span:nth-child(2) {
+  background: #e6e6e6;
+}
+#catalog .color span:nth-child(2):hover {
+  border-color: #e6e6e6;
+}
+
 #reviews .carousel .carousel-item {
   padding: 1em 11em;
 }
@@ -135,6 +192,7 @@ header h1 {
   color: #fff;
 }
 .modal .modal-dialog {
+  width: 16em;
   margin-right: 0;
   min-height: 0;
   position: absolute;
@@ -152,15 +210,11 @@ header h1 {
   background-color: rgba(0, 0, 0, 0);
 }
 
-.contact-form button {
-  background-color: #ad1457 !important;
-  color: #fff !important;
-}
 .contact-form .contact-form__icon {
   z-index: 2;
   position: fixed;
   bottom: 1em;
-  right: 5em;
+  right: 6.5em;
   cursor: pointer;
   min-width: 60px;
   min-height: 60px;
@@ -281,6 +335,10 @@ header h1 {
   header h1 {
     left: 1em;
     font-size: 2rem;
+  }
+
+  .catalog__item .col:nth-child(1) {
+    min-height: 0 !important;
   }
 
   #reviews .carousel .carousel-item {
