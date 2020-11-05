@@ -1,4 +1,4 @@
-let contactForm = document.querySelector(".contact-form__form")
+let contactForm = document.querySelector(".contact-form form");
 let contactFormButton = document.querySelector(".contact-form__icon")
 
 window.addEventListener('load', () => {
@@ -52,3 +52,39 @@ $("#navbarSupportedContent a").on('click', function(event) {
         });
     }
 });
+
+contactForm.addEventListener("submit", function(e) {
+    let button = document.querySelector(".contact-form form button");
+    let name = document.querySelector(".contact-form #name").value;
+    let phone = document.querySelector(".contact-form #phone").value;
+
+    function sendEmail() {
+        contactForm.classList.add('was-validated');
+        button.classList.toggle("button-loading");
+        Email.send({
+            Host: "smtp.gmail.com",
+            Username: "oingooboingo@gmail.com",
+            Password: "ixpgccvrjdlhqifu",
+            To: "oingooboingo@gmail.com",
+            From: "oingooboingo@gmail.com",
+            Subject: "call",
+            Body: ` 📟 ${name}, ${phone}`,
+        }).then(
+            message => {
+                console.log(message);
+                contactForm.reset();
+                button.classList.toggle("button-loading");
+                document.querySelector(".modal-body").innerHTML = `<p>Спасибо, мы перезвоним вам в течение нескольких часов!</p>`
+            }
+        );
+    }
+    e.preventDefault();
+    contactForm.classList.add('was-validated');
+
+    if (!contactForm.checkValidity()) {
+        e.stopPropagation();
+    } else {
+        e.preventDefault();
+        sendEmail()
+    }
+}, false)
