@@ -1,11 +1,22 @@
 $base-color: #ad1457;
 $base-color-dark: #78002e;
 $base-color-light: #e35183;
+.btn {
+    &:focus {
+        outline: none;
+        box-shadow: none;
+    }
+}
+
 .btn-outline-primary {
     color: $base-color;
     border-color: $base-color;
-    &:hover {
+    &:hover,
+    &:focus,
+    &:not(:disabled):not(.disabled):active,
+    &:not(:disabled):not(.disabled):active:focus {
         color: #fff;
+        box-shadow: none;
         background-color: $base-color;
         border-color: $base-color;
     }
@@ -130,7 +141,7 @@ header {
     }
 }
 
-#catalog {
+.catalog {
     .catalog__item {
         img {
             transition: transform .5s;
@@ -323,6 +334,11 @@ header {
 .loading {
     overflow: hidden;
     height: 100vh;
+}
+
+.button-loading {
+    background: url("../img/loading.svg") no-repeat center;
+    color: rgb(0 0 0 / 0%) !important;
 }
 
 .preloader {

@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/fonts.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <script src="https://smtpjs.com/v3/smtp.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"></script>
     <script>
         wow = new WOW({
@@ -38,12 +39,18 @@
                         <a class="nav-link" href="#about-us">О нас</a>
                     </li>
 
-                    <li class="nav-item dropdown">
+                    <!-- <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Каталог</a>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="#catalog">Межкомнатные двери</a>
                             <a class="dropdown-item" href="#catalog">Входные двери</a>
                         </div>
+                    </li> -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="#interior-doors">Межкомнатные двери</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#entrance-doors">Входные двери</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="#furniture">Фурнитура</a>
@@ -76,8 +83,8 @@
                 </div>
             </div>
         </section>
-        <section id="catalog">
-            <h2>Каталог</h2>
+        <section id="interior-doors" class="catalog">
+            <h2>Межкомнатные двери</h2>
             <div class="container">
                 <ul class="catalog row">
                     <li class="catalog__item col-6 col-lg-3">
@@ -111,6 +118,72 @@
                     <li class="catalog__item col-6 col-lg-3">
                         <div class="col">
                             <img src="img/catalog/3.jpg" alt="">
+                        </div>
+
+                        <div class="col">
+                            <h3>Дверь</h3>
+                            <p class="price">$120</p>
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt voluptatum doloremque temporibus ducimus saepe et.</p>
+                            <div class="color">
+                                <span></span><span></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="catalog__item col-6 col-lg-3">
+                        <div class="col">
+                            <img src="img/catalog/4.jpg" alt="">
+                        </div>
+
+                        <div class="col">
+                            <h3>Дверь</h3>
+                            <p class="price">$120</p>
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt voluptatum doloremque temporibus ducimus saepe et.</p>
+                            <div class="color">
+                                <span></span><span></span>
+                            </div>
+                        </div>
+                    </li>
+                    <!-- <li class="catalog__item col-3">
+                        <img src="img/catalog/1.jpg" alt="">
+                    </li> -->
+                </ul>
+            </div>
+        </section>
+        <section id="entrance-doors" class="catalog">
+            <h2>Входные двери</h2>
+            <div class="container">
+                <ul class="catalog row">
+                    <li class="catalog__item col-6 col-lg-3">
+                        <div class="col">
+                            <img src="img/catalog/3.jpg" alt="">
+                        </div>
+
+                        <div class="col">
+                            <h3>Дверь</h3>
+                            <p class="price">$120</p>
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt voluptatum doloremque temporibus ducimus saepe et.</p>
+                            <div class="color">
+                                <span></span><span></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="catalog__item col-6 col-lg-3">
+                        <div class="col">
+                            <img src="img/catalog/4.jpg" alt="">
+                        </div>
+
+                        <div class="col">
+                            <h3>Дверь</h3>
+                            <p class="price">$120</p>
+                            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt voluptatum doloremque temporibus ducimus saepe et.</p>
+                            <div class="color">
+                                <span></span><span></span>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="catalog__item col-6 col-lg-3">
+                        <div class="col">
+                            <img src="img/catalog/5.jpg" alt="">
                         </div>
 
                         <div class="col">
@@ -206,10 +279,9 @@
         </section>
         <div class="contact-form">
             <div class="contact-form__icon d-flex justify-content-center align-items-center" data-toggle="modal" data-target="#modal">
-                <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-chat-square-text-fill" fill="white" xmlns="http://www.w3.org/2000/svg">
-                        <path fill-rule="evenodd"
-                            d="M0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.5a1 1 0 0 0-.8.4l-1.9 2.533a1 1 0 0 1-1.6 0L5.3 12.4a1 1 0 0 0-.8-.4H2a2 2 0 0 1-2-2V2zm3.5 1a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9zm0 2.5a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9zm0 2.5a.5.5 0 0 0 0 1h5a.5.5 0 0 0 0-1h-5z" />
-                    </svg>
+                <svg width="2em" height="2em" viewBox="0 0 16 16" class="bi bi-telephone-fill" fill="white" xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M2.267.98a1.636 1.636 0 0 1 2.448.152l1.681 2.162c.309.396.418.913.296 1.4l-.513 2.053a.636.636 0 0 0 .167.604L8.65 9.654a.636.636 0 0 0 .604.167l2.052-.513a1.636 1.636 0 0 1 1.401.296l2.162 1.681c.777.604.849 1.753.153 2.448l-.97.97c-.693.693-1.73.998-2.697.658a17.47 17.47 0 0 1-6.571-4.144A17.47 17.47 0 0 1 .639 4.646c-.34-.967-.035-2.004.658-2.698l.97-.969z"/>
+                </svg>
             </div>
 
             <!-- <audio id="audio" src="wav/modal.wav"></audio> -->
@@ -219,24 +291,24 @@
                 <div class="modal-dialog modal-sm modal-dialog-centered">
                     <div class="modal-content">
                         <div class="modal-header">
-                            <h5 class="modal-title text-center" id="modalLabel">Напишите нам</h5>
+                            <h5 class="modal-title text-center" id="modalLabel">Заказать звонок</h5>
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
           <span aria-hidden="true">&times;</span>
         </button>
                         </div>
                         <div class="modal-body">
-                            <form>
+                            <form method="POST" novalidate>
                                 <div class=" form-group ">
-                                    <label for="colFormLabelSm ">Email:</label>
-                                    <input type="email " class="form-control form-control-sm " id="colFormLabelSm ">
+                                    <label for="name">Ваше имя:</label>
+                                    <input type="text" class="form-control form-control-sm " id="name">
                                 </div>
 
                                 <div class="form-group ">
-                                    <label for="exampleFormControlTextarea1 ">Ваш вопрос:</label>
-                                    <textarea class="form-control form-control-sm " id="exampleFormControlTextarea1 " rows="3 "></textarea>
+                                    <label for="phone">Телефон:</label>
+                                    <input type="text" pattern=".{13,}" class="form-control form-control-sm " id="phone" value="+375" required>
                                 </div>
                                 <div class="d-flex justify-content-center ">
-                                    <button type="submit " class="btn btn-outline-primary">Отправить</button>
+                                    <button type="submit" class="btn btn-outline-primary">Отправить</button>
                                 </div>
                             </form>
                         </div>
@@ -246,7 +318,7 @@
         </div>
     </footer>
 
-    <!-- <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc2tz68TDVJhAJwQQZwb-ey6-n4BBDrXsgeKrbXhQDbGSQFQg/viewform?embedded=true " width="640 " height="939 " frameborder="0 " marginheight="0 " marginwidth="0 ">Загрузка…</iframe> -->
+    <!-- <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSc2wDfPeR3ooZgjmkrofRI1eNMhb7VzxhS5VniSDi_Aw5Zx3Q/viewform?embedded=true" width="300" height="400" frameborder="0" marginheight="0" marginwidth="0">Загрузка…</iframe> -->
 
 
     <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
