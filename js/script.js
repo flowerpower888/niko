@@ -18,6 +18,12 @@ window.addEventListener('load', () => {
     }, 8000);
 })
 
+
+$('.navbar-nav>li>a').on('click', function(){
+    $('.navbar-collapse').collapse('hide');
+});
+
+
 $('#modal').on('show.bs.modal', function(e) {
     contactFormButton.classList.add("active");
 })
