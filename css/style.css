@@ -45,8 +45,7 @@ body section h2 {
 }
 
 .navbar {
-  background-color: white !important;
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+  background-color: rgba(105, 45, 49, 0.65);
   padding-right: 1em !important;
 }
 .navbar .navbar-toggler {
@@ -59,39 +58,6 @@ body section h2 {
   font-weight: 700;
   letter-spacing: 0.7em;
   font-style: italic;
-  color: #692d31;
-}
-.navbar .navbar-brand:hover {
-  color: #692d31;
-}
-.navbar .dropdown-menu {
-  background-color: white !important;
-  margin: 0.5rem -0.6rem 0;
-  border: none;
-  border-radius: 0;
-  border-left: 1px solid rgba(0, 0, 0, 0.1);
-  border-bottom: 1px solid rgba(0, 0, 0, 0.1);
-  border-right: 1px solid rgba(0, 0, 0, 0.1);
-}
-.navbar .dropdown-menu a.dropdown-item:after, .navbar .dropdown-menu a.dropdown-item.active:after {
-  background: none repeat scroll 0 0 transparent;
-  bottom: 0;
-  content: "";
-  display: block;
-  height: 2px;
-  left: 50%;
-  position: absolute;
-  background: rgba(0, 0, 0, 0.7);
-  transition: width 0.3s ease 0s, left 0.3s ease 0s;
-  width: 0;
-}
-.navbar .dropdown-menu a.dropdown-item:hover:after, .navbar .dropdown-menu a.dropdown-item.active:after {
-  width: 100%;
-  left: 0;
-}
-.navbar .dropdown-menu a.dropdown-item.active, .navbar .dropdown-menu a.dropdown-item:active {
-  color: rgba(0, 0, 0, 0.9);
-  background: none;
 }
 .navbar .nav-link {
   text-transform: uppercase;
@@ -106,7 +72,7 @@ body section h2 {
   height: 2px;
   left: 50%;
   position: absolute;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(255, 255, 255, 0.7);
   transition: width 0.3s ease 0s, left 0.3s ease 0s;
   width: 0;
 }
@@ -196,6 +162,30 @@ body section h2 {
   border-color: #e6e6e6;
 }
 
+#furniture #slider-furniture {
+  background: #fff;
+}
+#furniture #slider-furniture .carousel-item {
+  position: relative;
+  height: 25em;
+}
+#furniture #slider-furniture .carousel-item .description {
+  position: absolute;
+  bottom: 1.3em;
+  left: 0;
+}
+#furniture #slider-furniture .carousel-indicators {
+  z-index: 1;
+}
+#furniture #slider-furniture .carousel-indicators li {
+  border: 2px solid;
+  width: 10px !important;
+  height: 10px !important;
+  border-radius: 50%;
+  padding: 0;
+  z-index: 0;
+}
+
 #reviews .carousel .carousel-item {
   padding: 1em 11em;
 }
@@ -208,7 +198,8 @@ body section h2 {
 
 #contacts {
   padding-top: 50px;
-  background: #fff;
+  background: #381b1d;
+  color: #fff;
   border-top: 1px solid rgba(0, 0, 0, 0.1);
   padding-bottom: 2em;
 }
@@ -377,6 +368,13 @@ body section h2 {
   }
 }
 @media screen and (max-width: 768px) {
+  .navbar-collapse {
+    height: 100vh;
+  }
+
+  .navbar {
+    background-color: #692d31;
+  }
   .navbar .navbar-brand {
     font-weight: 700;
     letter-spacing: 0.4em;
@@ -391,6 +389,7 @@ body section h2 {
     display: none;
   }
   #about .wrapper {
+    background: rgba(105, 45, 49, 0.55);
     width: auto;
     height: auto;
     margin-left: 0;
