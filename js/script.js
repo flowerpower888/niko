@@ -6,7 +6,7 @@ window.addEventListener('load', () => {
         history.scrollRestoration = 'manual';
     }
     window.scrollTo(0, 0);
-    document.querySelector(".header__image").classList.add("opacity");
+    // document.querySelector(".header__image").classList.add("opacity");
     setTimeout(() => {
         document.querySelector(".preloader").classList.add('hidden');
     }, 1000);
