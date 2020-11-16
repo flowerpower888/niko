@@ -16,7 +16,10 @@
 
 body {
   font-family: YSText;
-  background: #f9f9f9;
+  background: #fff;
+}
+body h2 {
+  text-align: center;
 }
 body button {
   border: none;
@@ -116,7 +119,14 @@ body section h2 {
   top: 21em;
 }
 
+.catalog {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
 .catalog .catalog__item {
+  display: none;
   padding-left: 0;
 }
 .catalog .catalog__item img {
@@ -134,10 +144,7 @@ body section h2 {
 }
 .catalog .catalog__item .col {
   padding-left: 0;
-}
-.catalog .catalog__item .col:nth-child(1) {
-  min-height: 338px;
-  margin-bottom: 1.5em;
+  margin-bottom: 2em;
 }
 .catalog .color span {
   width: 20px;
@@ -162,30 +169,31 @@ body section h2 {
   border-color: #e6e6e6;
 }
 
-#furniture #slider-furniture {
-  background: #fff;
+#furniture {
+  overflow: hidden;
 }
-#furniture #slider-furniture .carousel-item {
-  position: relative;
-  height: 25em;
+#furniture h2 {
+  margin-bottom: 0;
 }
-#furniture #slider-furniture .carousel-item .description {
-  position: absolute;
-  bottom: 1.3em;
-  left: 0;
+#furniture .furniture__catalog {
+  flex-wrap: nowrap !important;
+  transform: translateX(0px);
+  transition: all 0.5s;
 }
-#furniture #slider-furniture .carousel-indicators {
-  z-index: 1;
-}
-#furniture #slider-furniture .carousel-indicators li {
-  border: 2px solid;
-  width: 10px !important;
-  height: 10px !important;
-  border-radius: 50%;
-  padding: 0;
-  z-index: 0;
+#furniture .furniture__catalog .furniture__catalog_item {
+  cursor: pointer;
 }
 
+#reviews .review {
+  position: relative;
+  box-shadow: #d2d2d2 0px 0px 15px;
+  background: #fff;
+  border-radius: 3px;
+  padding: 2.5rem;
+}
+#reviews .review .review__userpic {
+  margin-right: 1em;
+}
 #reviews .carousel .carousel-item {
   padding: 1em 11em;
 }
@@ -328,11 +336,11 @@ body section h2 {
   left: 0;
   top: 0;
   z-index: 999;
-  width: 100%;
-  height: 100%;
-  overflow: visible;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
   background: #fff url("../img/loader.svg") no-repeat center center;
-  /* transition: visibility 0s 0.5s, opacity 0.5s linear; */
+  transition: visibility 0s 0.5s, opacity 0.5s linear;
 }
 
 .hidden {
@@ -399,13 +407,11 @@ body section h2 {
     display: none;
   }
 
-  .catalog__item .col:nth-child(1) {
-    min-height: 0 !important;
-  }
-
   #reviews .carousel .carousel-item {
-    text-align: center;
-    padding: 1em 4em;
+    padding: 0;
+  }
+  #reviews .carousel .carousel-item .review__userpic {
+    display: none;
   }
 
   .contact-form .contact-form__icon {
