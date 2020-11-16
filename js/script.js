@@ -7,16 +7,16 @@ window.addEventListener("load", () => {
     document.querySelector(".preloader").classList.add("hidden");
   }, 2000);
 
-      if ("scrollRestoration" in history) {
-        history.scrollRestoration = "manual";
-      }
-      window.scrollTo(0, 0);
+  if ("scrollRestoration" in history) {
+    history.scrollRestoration = "manual";
+  }
+  window.scrollTo(0, 0);
 
-    setTimeout(() => {
-      if (!contactFormButton.classList.contains("active")) {
-        contactFormButton.click();
-      }
-    }, 8000);
+  setTimeout(() => {
+    if (!contactFormButton.classList.contains("active")) {
+      contactFormButton.click();
+    }
+  }, 8000);
 });
 
 $(".navbar-nav>li>a").on("click", function () {
@@ -60,12 +60,13 @@ $(document).ready(function () {
   });
 });
 
-
 function translateX(e) {
+  let itemWidth = document.querySelector(".furniture__catalog_item").offsetWidth;
   e.preventDefault();
+  console.log(-(itemWidth * 14));
 
-  translate += (e.deltaY * -1)/100 * 930;
-  translate = Math.min(Math.max(-6510, translate), 0);
+  translate += ((e.deltaY * -1) / 100) * (itemWidth * 2);
+  translate = Math.min(Math.max(-(itemWidth * 14), translate), 0);
 
   furnitureCatalog.style.transform = `translateX(${translate}px)`;
 }
