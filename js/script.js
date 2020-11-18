@@ -53,7 +53,7 @@ $(document).ready(function () {
   $(".catalog__item").slice(0, 4).show();
   $(".load-more-button").on("click", function (e) {
     e.preventDefault();
-    $(".catalog__item:hidden").slice(0, 4).slideDown();
+    $(".catalog__item:hidden").slice(0, 4).slideDown(2000);
     if ($(".catalog__item:hidden").length == 0) {
       $(".load-more-button").fadeOut("slow");
     }
