@@ -7,10 +7,10 @@ window.addEventListener("load", () => {
     document.querySelector(".preloader").classList.add("hidden");
   }, 2000);
 
-  if ("scrollRestoration" in history) {
-    history.scrollRestoration = "manual";
-  }
-  window.scrollTo(0, 0);
+  // if ("scrollRestoration" in history) {
+  //   history.scrollRestoration = "manual";
+  // }
+  // window.scrollTo(0, 0);
 
   setTimeout(() => {
     if (!contactFormButton.classList.contains("active")) {
@@ -60,18 +60,35 @@ $(document).ready(function () {
   });
 });
 
-function translateX(e) {
+let touchStart = null;
+furnitureCatalog.addEventListener("touchstart", function (e) {
+  touchStart = e.changedTouches[0];
+});
+furnitureCatalog.addEventListener("touchend", function (e) {
+  let end = e.changedTouches[0];
+  if (end.screenX - touchStart.screenX > 0) {
+    translateX(e, 1); //right
+  } else if (end.screenX - touchStart.screenX < 0) {
+    translateX(e, -1); //left
+  }
+});
+
+let translate = 1;
+
+function translateX(e, touchDirection) {
   let itemWidth = document.querySelector(".furniture__catalog_item").offsetWidth;
-  e.preventDefault();
-  console.log(-(itemWidth * 14));
-
-  translate += ((e.deltaY * -1) / 100) * (itemWidth * 2);
+  if (e.cancelable) {
+    e.preventDefault();
+  }
+  if (e.type === "wheel") {
+    translate += ((e.deltaY * -1) / 100) * (itemWidth * 2);
+  } else if (e.type === "touchend") {
+    translate += touchDirection * itemWidth * 2;
+  }
   translate = Math.min(Math.max(-(itemWidth * 14), translate), 0);
-
   furnitureCatalog.style.transform = `translateX(${translate}px)`;
 }
-let translate = 1;
-furnitureCatalog.onwheel = translateX;
+furnitureCatalog.addEventListener("wheel", translateX);
 
 contactForm.addEventListener(
   "submit",
