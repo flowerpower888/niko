@@ -50,10 +50,10 @@ $("#navbarSupportedContent a").on("click", function (event) {
 
 //load more button
 $(document).ready(function () {
-  $(".catalog__item").slice(0, 5).show();
+  $(".catalog__item").slice(0, 4).show();
   $(".load-more-button").on("click", function (e) {
     e.preventDefault();
-    $(".catalog__item:hidden").slice(0, 5).slideDown();
+    $(".catalog__item:hidden").slice(0, 4).slideDown();
     if ($(".catalog__item:hidden").length == 0) {
       $(".load-more-button").fadeOut("slow");
     }
