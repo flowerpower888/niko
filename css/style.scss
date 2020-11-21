@@ -1,6 +1,6 @@
 $base-color: #692d31;
-$base-color-dark: #692d31;
-$base-color-light: #e35183;
+$base-color-dark: #381b1d;
+$base-color-light: #ac6569;
 .btn {
   &:focus {
     outline: none;
@@ -11,6 +11,7 @@ $base-color-light: #e35183;
 .btn-outline-primary {
   color: $base-color;
   border-color: $base-color;
+  border-radius: 0px;
   &:hover,
   &:focus,
   &:not(:disabled):not(.disabled):active,
@@ -25,9 +26,6 @@ $base-color-light: #e35183;
 body {
   font-family: YSText;
   background: #fff;
-  h2 {
-    text-align: center;
-  }
   button {
     border: none;
     &:focus {
@@ -46,19 +44,24 @@ body {
     font-weight: 400;
   }
   section {
+    h2 {
+      text-align: center;
+      color: $base-color-dark;
+      // &::before,
+      // &::after {
+      //   display: inline-block;
+      //   content: "";
+      //   border-top: 0.15rem solid $base-color-dark;
+      //   width: 16rem;
+      //   margin: 0 1rem;
+      //   transform: translateY(-0.5rem);
+      // }
+    }
     padding-top: 106px;
     padding-bottom: 20px;
     h1,
     h2 {
       margin-bottom: 1.5em;
-      //   &::before,
-      //   &::after {
-      //     content: "";
-      //     display: block;
-      //     height: 2px;
-      //     min-width: 30vw;
-      //     background-color: #000;
-      //   }
     }
   }
 }
@@ -76,10 +79,6 @@ body {
     font-weight: 700;
     letter-spacing: 0.7em;
     font-style: italic;
-    // color: $base-color-dark;
-    // &:hover {
-    //   color: $base-color-dark;
-    // }
   }
   .nav-link {
     text-transform: uppercase;
@@ -123,10 +122,17 @@ body {
     height: 25em;
     position: relative;
     background: #692d31;
-    color: #fff;
     padding: 2em 1em 5em 8em;
     margin-left: 13em;
     width: 45em;
+    h2,
+    p {
+      color: #fff;
+      &::before,
+      &::after {
+        content: none;
+      }
+    }
     img {
       position: absolute;
       width: 200px;
@@ -167,47 +173,46 @@ body {
     .col {
       padding-left: 0;
       margin-bottom: 2em;
-      // &:nth-child(1) {
-      //   min-height: 338px;
-      //   margin-bottom: 1.5em;
-      // }
     }
-  }
-  .color {
-    span {
+    .color {
       width: 20px;
       height: 20px;
       border: solid 2px #aaa;
       border-radius: 4px;
-      float: left;
-      margin-right: 0.4rem;
+      margin-bottom: 16px;
       cursor: pointer;
       transition: all 0.4s ease;
-      &:nth-child(1) {
-        background: #82431e;
-        &:hover {
-          border-color: #82431e;
-        }
+      background: #82431e;
+      &:hover {
+        border-color: #82431e;
       }
-      &:nth-child(2) {
-        background: #e6e6e6;
-        &:hover {
-          border-color: #e6e6e6;
-        }
-      }
+    }
+    button {
+      width: 100%;
+    }
+  }
+  .load-more-button {
+    border: none;
+    &:hover,
+    &:focus,
+    &:not(:disabled):not(.disabled):active,
+    &:not(:disabled):not(.disabled):active:focus {
+      color: $base-color-light;
+      box-shadow: none;
+      background: none;
     }
   }
 }
 
 #furniture {
-    overflow: hidden;
-    h2 {
-      margin-bottom: 0;
-    }
+  overflow: hidden;
+  h2 {
+    margin-bottom: 0;
+  }
   .furniture__catalog {
     flex-wrap: nowrap !important;
     transform: translateX(0px);
-    transition: all .5s;
+    transition: all 0.5s;
     .furniture__catalog_item {
       cursor: pointer;
     }
@@ -216,9 +221,7 @@ body {
 
 #reviews {
   .review {
-    position: relative;
     box-shadow: #d2d2d2 0px 0px 15px;
-    background: #fff;
     border-radius: 3px;
     padding: 2.5rem;
     .review__userpic {
@@ -243,8 +246,10 @@ body {
   padding-top: 50px;
   background: #381b1d;
   color: #fff;
-  border-top: 1px solid rgba(0, 0, 0, 0.1);
   padding-bottom: 2em;
+  h2 {
+    color: #fff;
+  }
   .contacts__item {
     svg {
       transition: all 0.3s ease;
@@ -252,7 +257,7 @@ body {
       &:hover,
       &:focus path {
         cursor: pointer;
-        fill: $base-color-dark;
+        fill: $base-color;
       }
     }
   }
@@ -288,10 +293,6 @@ body {
 }
 
 .contact-form {
-  // button {
-  //     background-color: $base-color !important;
-  //     color: #fff !important;
-  // }
   .contact-form__icon {
     z-index: 2;
     position: fixed;
@@ -443,7 +444,7 @@ body {
   }
 
   #about {
-    padding-top: 56px;
+    padding-top: 55px;
     height: auto;
     font-size: 0.9rem;
     .parallax {
@@ -460,15 +461,12 @@ body {
       }
     }
   }
-  // .catalog__item {
-  //   .col {
-  //     &:nth-child(1) {
-  //       min-height: 0 !important;
-  //     }
-  //   }
-  // }
   #reviews .carousel .carousel-item {
     padding: 0;
+    .review {
+      padding: 0;
+      box-shadow: none;
+    }
     .review__userpic {
       display: none;
     }

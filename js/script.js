@@ -90,6 +90,14 @@ function translateX(e, touchDirection) {
 }
 furnitureCatalog.addEventListener("wheel", translateX);
 
+document.querySelectorAll(".catalog__item").forEach(item => {
+  item.addEventListener("click", function (e) {
+    if (e.target.tagName == "BUTTON") {
+      $("#modal").modal("show");
+    }
+  });
+})
+
 contactForm.addEventListener(
   "submit",
   function (e) {
