@@ -22,3 +22,17 @@
   font-weight: 400;
   src: url('../fonts/playfair-display-v21-cyrillic-regular.woff');
 }
+
+@font-face {
+  font-family: 'Merriweather';
+  font-style: normal;
+  font-weight: 400;
+  src: url('../fonts/Merriweather-Regular.woff');
+}
+
+@font-face {
+  font-family: 'Merriweather';
+  font-style: italic;
+  font-weight: 400;
+  src: url('../fonts/Merriweather-Italic.woff');
+}

@@ -99,9 +99,10 @@ body section h2 {
   font-size: 18px;
 }
 #about .wrapper {
+  border-radius: 1px;
   height: 25em;
   position: relative;
-  background: #692d31;
+  background: #8a5e60;
   padding: 2em 1em 5em 8em;
   margin-left: 13em;
   width: 45em;
@@ -126,7 +127,7 @@ body section h2 {
 }
 #about .wrapper img:nth-child(2) {
   left: 3em;
-  top: 21em;
+  top: 22em;
 }
 
 .catalog {
@@ -136,6 +137,7 @@ body section h2 {
   align-items: center;
 }
 .catalog .catalog__item {
+  font-family: "Merriweather";
   display: none;
   padding-left: 0;
 }
@@ -150,7 +152,16 @@ body section h2 {
   font-size: 14px;
 }
 .catalog .catalog__item .price {
-  font-size: 18px;
+  font-size: 20px;
+  font-style: italic;
+  color: #444444;
+}
+.catalog .catalog__item .price::before {
+  display: block;
+  content: "";
+  border-top: 1px solid #381b1d;
+  width: 100%;
+  height: 1px;
 }
 .catalog .catalog__item .col {
   padding-left: 0;
@@ -194,8 +205,12 @@ body section h2 {
 }
 #furniture .furniture__catalog .furniture__catalog_item {
   cursor: pointer;
+  font-family: "Merriweather";
 }
 
+#reviews {
+  margin-bottom: 5em;
+}
 #reviews .review {
   box-shadow: #d2d2d2 0px 0px 15px;
   border-radius: 3px;
@@ -222,6 +237,9 @@ body section h2 {
 }
 #contacts h2 {
   color: #fff;
+}
+#contacts .contacts__item {
+  font-family: "Merriweather";
 }
 #contacts .contacts__item svg {
   transition: all 0.3s ease;
