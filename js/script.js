@@ -49,13 +49,14 @@ $("#navbarSupportedContent a").on("click", function (event) {
 });
 
 //load more button
-$(document).ready(function () {
-  $(".catalog__item").slice(0, 4).show();
+$("ul.catalog").each(function () {
+  $(this).find(".catalog__item").slice(0, 4).show();
   $(".load-more-button").on("click", function (e) {
     e.preventDefault();
-    $(".catalog__item:hidden").slice(0, 4).slideDown(2000);
-    if ($(".catalog__item:hidden").length == 0) {
-      $(".load-more-button").fadeOut("slow");
+    let id = $(this).closest("section").attr("id");
+    $(`#${id} .catalog__item:hidden`).slice(0, 2).slideDown(2000);
+    if ($(`#${id} .catalog__item:hidden`).length == 0) {
+      $(`#${id} .load-more-button`).fadeOut("slow");
     }
   });
 });
@@ -76,7 +77,8 @@ furnitureCatalog.addEventListener("touchend", function (e) {
 let translate = 1;
 
 function translateX(e, touchDirection) {
-  let itemWidth = document.querySelector(".furniture__catalog_item").offsetWidth;
+  let itemWidth = document.querySelector(".furniture__catalog_item")
+    .offsetWidth;
   if (e.cancelable) {
     e.preventDefault();
   }
@@ -90,13 +92,13 @@ function translateX(e, touchDirection) {
 }
 furnitureCatalog.addEventListener("wheel", translateX);
 
-document.querySelectorAll(".catalog__item").forEach(item => {
+document.querySelectorAll(".catalog__item").forEach((item) => {
   item.addEventListener("click", function (e) {
     if (e.target.tagName == "BUTTON") {
       $("#modal").modal("show");
     }
   });
-})
+});
 
 contactForm.addEventListener(
   "submit",
