@@ -50,7 +50,7 @@ $("#navbarSupportedContent a").on("click", function (event) {
 
 //load more button
 $("ul.catalog").each(function () {
-  $(this).find(".catalog__item").slice(0, 4).show();
+  $(this).find(".catalog__item").slice(0, 4).css("display", "flex");
   $(".load-more-button").on("click", function (e) {
     e.preventDefault();
     let id = $(this).closest("section").attr("id");
@@ -60,6 +60,15 @@ $("ul.catalog").each(function () {
     }
   });
 });
+
+//color
+$(".catalog .color").each(function() {
+  $(this).css("background", this.dataset.color)
+  $(this).on("click", function() {
+    let img = $(this).parent().parent().find("img").last();
+    img.attr("src", this.dataset.url);
+  })
+})
 
 let touchStart = null;
 furnitureCatalog.addEventListener("touchstart", function (e) {

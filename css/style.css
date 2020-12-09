@@ -31,7 +31,6 @@ body img {
 body li {
   list-style: none;
   position: relative;
-  padding: 15px 0;
 }
 body p {
   font-weight: 400;
@@ -139,10 +138,16 @@ body section h2 {
 .catalog .catalog__item {
   font-family: "Merriweather";
   display: none;
-  padding-left: 0;
+  flex-direction: column;
+  padding: 20px;
+  box-shadow: 1px 0 0 0 #0000008c, 0 1px 0 0 #0000008c, 1px 0 0 0 #0000008c inset, 0 1px 0 0 #0000008c inset;
 }
 .catalog .catalog__item img {
   transition: transform 0.5s;
+  margin-bottom: 20px;
+}
+#entrance-doors .catalog .catalog__item img {
+  width: 48%;
 }
 .catalog .catalog__item img:hover {
   cursor: pointer;
@@ -170,23 +175,21 @@ body section h2 {
 .catalog .catalog__item .color {
   width: 20px;
   height: 20px;
-  border: solid 2px #aaa;
+  margin-right: 10px;
   border-radius: 4px;
   margin-bottom: 16px;
   cursor: pointer;
   transition: all 0.4s ease;
   background: #82431e;
 }
-.catalog .catalog__item .color:hover {
-  border-color: #82431e;
-}
 .catalog .catalog__item button {
   width: 100%;
 }
-.catalog .load-more-button {
+
+.load-more-button {
   border: none;
 }
-.catalog .load-more-button:hover, .catalog .load-more-button:focus, .catalog .load-more-button:not(:disabled):not(.disabled):active, .catalog .load-more-button:not(:disabled):not(.disabled):active:focus {
+.load-more-button:hover, .load-more-button:focus, .load-more-button:not(:disabled):not(.disabled):active, .load-more-button:not(:disabled):not(.disabled):active:focus {
   color: #ac6569;
   box-shadow: none;
   background: none;
