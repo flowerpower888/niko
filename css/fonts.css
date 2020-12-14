@@ -24,6 +24,13 @@
 }
 
 @font-face {
+  font-family: 'Playfair Display';
+  font-style: normal;
+  font-weight: 500;
+  src: url('../fonts/playfair-display-v21-latin_cyrillic-500.woff');
+}
+
+@font-face {
   font-family: 'Merriweather';
   font-style: normal;
   font-weight: 400;

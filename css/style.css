@@ -32,9 +32,6 @@ body li {
   list-style: none;
   position: relative;
 }
-body p {
-  font-weight: 400;
-}
 body section {
   padding-top: 106px;
   padding-bottom: 20px;
@@ -134,6 +131,7 @@ body section h2 {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  padding: 0;
 }
 .catalog .catalog__item {
   font-family: "Merriweather";
@@ -141,6 +139,12 @@ body section h2 {
   flex-direction: column;
   padding: 20px;
   box-shadow: 1px 0 0 0 #0000008c, 0 1px 0 0 #0000008c, 1px 0 0 0 #0000008c inset, 0 1px 0 0 #0000008c inset;
+}
+.catalog .catalog__item h3 {
+  font-size: 1.5rem;
+}
+.catalog .catalog__item br {
+  display: none;
 }
 .catalog .catalog__item img {
   transition: transform 0.5s;
@@ -427,17 +431,26 @@ body section h2 {
     font-size: 0.9rem;
   }
   #about .parallax {
-    display: none;
+    opacity: 0.1;
   }
   #about .wrapper {
-    background: rgba(105, 45, 49, 0.55);
+    background: none;
     width: auto;
-    height: auto;
+    height: 100vh;
     margin-left: 0;
     padding: 2em;
   }
   #about .wrapper img {
     display: none;
+  }
+  #about .wrapper h2,
+#about .wrapper p {
+    font-weight: 500;
+    color: #381b1d !important;
+  }
+
+  .catalog .catalog__item h3 {
+    font-size: 1.2rem;
   }
 
   #reviews .carousel .carousel-item {
@@ -458,6 +471,28 @@ body section h2 {
 
   .modal .modal-dialog {
     bottom: 5em;
+  }
+}
+@media screen and (max-width: 490px) {
+  .catalog .catalog__item br {
+    display: block;
+  }
+  .catalog .catalog__item .price {
+    font-size: 15px;
+  }
+  .catalog .catalog__item p {
+    font-size: 13px;
+  }
+}
+@media screen and (max-width: 360px) {
+  .catalog .catalog__item h3 {
+    font-size: 0.9rem;
+  }
+  .catalog .catalog__item .price {
+    font-size: 14px;
+  }
+  .catalog .catalog__item p {
+    font-size: 12px;
   }
 }
 

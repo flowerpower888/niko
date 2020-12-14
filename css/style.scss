@@ -39,22 +39,10 @@ body {
     list-style: none;
     position: relative;
   }
-  p {
-    font-weight: 400;
-  }
   section {
     h2 {
       text-align: center;
       color: $base-color-dark;
-      // &::before,
-      // &::after {
-      //   display: inline-block;
-      //   content: "";
-      //   border-top: 0.15rem solid $base-color-dark;
-      //   width: 16rem;
-      //   margin: 0 1rem;
-      //   transform: translateY(-0.5rem);
-      // }
     }
     padding-top: 106px;
     padding-bottom: 20px;
@@ -155,6 +143,7 @@ body {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  padding: 0;
   .catalog__item {
     font-family: "Merriweather";
     display: none;
@@ -162,6 +151,12 @@ body {
     padding: 20px;
     box-shadow: 1px 0 0 0 #0000008c, 0 1px 0 0 #0000008c,
       1px 0 0 0 #0000008c inset, 0 1px 0 0 #0000008c inset;
+    h3 {
+      font-size: 1.5rem;
+    }
+    br {
+      display: none;
+    }
     img {
       transition: transform 0.5s;
       margin-bottom: 20px;
@@ -467,19 +462,33 @@ body {
     height: auto;
     font-size: 0.9rem;
     .parallax {
-      display: none;
+      opacity: .1;
     }
     .wrapper {
-      background: rgb(105 45 49 / 55%);
+      background: none;
       width: auto;
-      height: auto;
+      height: 100vh;
       margin-left: 0;
       padding: 2em;
       img {
         display: none;
       }
+      h2,
+      p {
+        font-weight: 500;
+        color: $base-color-dark !important;
+      }
     }
   }
+
+  .catalog {
+    .catalog__item {
+      h3 {
+        font-size: 1.2rem;
+      }
+    }
+  }
+
   #reviews .carousel .carousel-item {
     padding: 0;
     .review {
@@ -490,11 +499,45 @@ body {
       display: none;
     }
   }
+
   .contact-form .contact-form__icon {
     bottom: 1em;
     right: 1em;
   }
+
   .modal .modal-dialog {
     bottom: 5em;
+  }
+}
+
+@media screen and (max-width: 490px) {
+  .catalog {
+    .catalog__item {
+      br {
+        display: block;
+      }
+      .price {
+        font-size: 15px;
+      }
+      p {
+        font-size: 13px;
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 360px) {
+  .catalog {
+    .catalog__item {
+      h3 {
+        font-size: 0.9rem;
+      }
+      .price {
+        font-size: 14px;
+      }
+      p {
+        font-size: 12px;
+      }
+    }
   }
 }
