@@ -155,10 +155,10 @@ body section h2 {
 }
 .catalog .catalog__item img:hover {
   cursor: pointer;
-  transform: scale(1.1);
+  transform: scale(1.05);
 }
 .catalog .catalog__item p {
-  font-size: 14px;
+  font-size: 1rem;
 }
 .catalog .catalog__item .price {
   font-size: 20px;
